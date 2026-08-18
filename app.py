@@ -1,4 +1,5 @@
 import streamlit as st
+from config import SUPPORTED_CITIES
 
 st.set_page_config(
     page_title="PulseGrid",
@@ -378,13 +379,7 @@ left, middle, right = st.columns([1.4, 1.4, 0.8], gap="medium")
 with left:
     st.selectbox(
         "Location",
-        [
-            "Charlotte, NC",
-            "Raleigh, NC",
-            "Durham, NC",
-            "Greensboro, NC",
-            "Winston-Salem, NC"
-        ],
+        list(SUPPORTED_CITIES.keys()),
         index=0
     )
 
